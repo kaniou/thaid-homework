@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import '@mantine/core/styles.css';
-import { ColorSchemeScript, MantineProvider } from '@mantine/core'
+import { ColorSchemeScript, Container, MantineProvider } from '@mantine/core'
+import { Sarabun } from 'next/font/google'
+
+const sarabun = Sarabun({
+  weight: ['400', '600', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['thai'],
+})
 
 export const metadata: Metadata = {
   title: "ThaiD Homework",
@@ -17,9 +24,11 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body>
+      <body className={sarabun.className}>
         <MantineProvider>
-          {children}
+          <Container>
+            {children}
+          </Container>
         </MantineProvider>
       </body>
     </html>
