@@ -61,7 +61,7 @@ const CallbackTable = ({ client_id, client_secret, callback_url }: CallbackTable
     }
 
     mangeSession()
-  }, []);
+  });
 
   return (
     <>
